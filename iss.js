@@ -7,16 +7,16 @@ Notice that the values provided by the API are very precise. Round off the value
 decimal digits for a nicer display. Hint: toFixed
 Save/commit/push
 */
-var url = 'http://api.open-notify.org/iss-now.json';
-var request = require('request');
+var url = 'http://api.open-notify.org/iss-now.json';  // get this url from this link: http://open-notify.org/Open-Notify-API/ISS-Location-Now/ by clicking on the link under 'JSON'.
+var request = require('request'); // this is like a format
 
-request (url, function(err, response, body) {
+request(url, function(err, response, body) { // this is like a format
     if (err) {
         console.log("There was an error");
     }
     else {
-        var parseBody = JSON.parse(body);
-        console.log(parseBody.ISS_Latitude);
-        console.log(parseBody.ISS_Longitude);
+        var parseBody = JSON.parse(body); // parse to turn "body" into something that the system understands
+        console.log(parseBody.iss_position.latitude.toFixed(2));
+        console.log(parseBody.iss_position.longitude.toFixed(2));
     }
 });
