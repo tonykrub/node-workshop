@@ -46,4 +46,3 @@ function hangMan(){
 
 hangMan();
 
-// not yet complete. still need to work on the pictures
